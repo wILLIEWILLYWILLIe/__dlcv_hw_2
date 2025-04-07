@@ -1,0 +1,36 @@
+#Ignore the dataset
+#IMPORTANT: make sure that your dataset is stored in a folder with the same as the one specified below
+*png
+*jpg
+*.pyc
+*.pyo
+*.bin
+
+output/*
+hw2_data/*
+hw2_data
+hw2_ckpt/*
+hw2_ckpt
+
+.venv
+.venv/*
+.python-version
+
+*/P1_ddpm2.pth
+
+!Result/P1_DDPM/*png
+!Result/P2_DDIM/*png
+
+*/sd-v1-4.ckpt
+*/sd-v1-4*
+*/embeddings_epoch*
+/textual_inversion/*
+*model.ckpt
+*/ckpt_folder/*
+*/ckpt_folder_new/*
+
+!/stable-diffusion/epoch600new_ckpt.pth
+!/stable-diffusion/epoch580_ckpt.pth
+!/stable-diffusion/epoch800_1_ckpt
+!/stable-diffusion/epoch_2_ckpt.pth
+!/stable-diffusion/epoch_3__ckpt.pth

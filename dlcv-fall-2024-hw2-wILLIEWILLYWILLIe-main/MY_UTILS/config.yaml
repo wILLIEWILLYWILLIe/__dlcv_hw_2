@@ -1,0 +1,52 @@
+P1_dataset_params:
+  MNISTM_DATA_DIR : "./hw2_data/digits/mnistm/data" 
+  MNISTM_CSV      : "./hw2_data/digits/mnistm/train.csv"
+  SVHN_DATA_DIR   : "./hw2_data/digits/svhn/data"
+  SVHN_CSV        : "./hw2_data/digits/svhn/train.csv"
+  MNISTM_OUTPUT_DIR : "./output_folder/mnistm"
+  SVHN_OUTPUT_DIR   : "./output_folder/svhn"
+
+P1_diffusion_params:
+  num_timesteps : 1000
+  beta_start : 0.0001
+  beta_end : 0.02
+
+P1_model_params:
+  im_channels : 3
+  im_size : 32
+  down_channels : [32, 64, 128, 256]
+  mid_channels : [256, 256, 128]
+  down_sample : [True, True, False]
+  time_emb_dim : 128
+  num_down_layers : 2
+  num_mid_layers : 2
+  num_up_layers : 2
+  num_heads : 4
+
+P1_train_params:
+  task_name: 'P1_DDPM'
+  batch_size: 128
+  num_epochs: 500
+  num_samples : 50
+  num_classes : 20
+  lr: 0.0001
+  load_ckpt_name: './MY_UTILS/P1_ddpm2.pth'
+  save_ckpt_name: './MY_UTILS/P1_ddpm2.pth'
+  load_ckpt: True     # Load the above ckpt_model_path for pretrain or predict
+  sample_only: True  # Call the sampling function to generate images only
+
+P2_dataset_params:
+  GT_folder     : "./hw2_data/face/GT"
+  noise_folder  : "./hw2_data/face/noise"
+  ckpt_name     : "./hw2_data/face/UNet.pt"
+  output_folder : "./Result/P2_DDIM"
+
+P2_diffusion_params:
+  num_timesteps : 1000
+  beta_start : 0.0001
+  beta_end : 0.02
+  # beta_start : 0.00001  # or 1e-4
+  # beta_end : 0.01  # or 0.015
+  total_steps : 50
+  batch_size : 10
+  eta : 0
